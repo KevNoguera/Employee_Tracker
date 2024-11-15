@@ -1,18 +1,18 @@
-DROP DATABASE IF EXISTS employeeTracker_db;
-CREATE DATABASE employeeTracker_db;
+DROP DATABASE IF EXISTS employee_tracker_db;
+CREATE DATABASE employee_tracker_db;
 
-\c employeeTracker_db;
+\c employee_tracker_db;
 
 CREATE TABLE department (
     id SERIAL PRIMARY KEY, 
-    employee_name VARCHAR (30) NOT NULL
+    name VARCHAR (30) NOT NULL
 );
 
 CREATE TABLE roles (
     id SERIAL PRIMARY KEY,
-    job_title, VARCHAR (30) NOT NULL,
+    title VARCHAR (30) UNIQUE NOT NULL,
     salary DECIMAL NOT NULL,
-    department_id INT NOT NULL
+    department_id INTEGER NOT NULL REFERENCES department(id)
 );
 
 CREATE TABLE employee (
@@ -20,5 +20,5 @@ CREATE TABLE employee (
     first_name VARCHAR (30) NOT NULL,
     last_name VARCHAR (30) NOT NULL,
     role_id INT NOT NULL,
-    manager_id INT NOT NULL
+    manager_id INTEGER REFERENCES employee(id)
 )
