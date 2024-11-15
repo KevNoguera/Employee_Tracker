@@ -46,7 +46,9 @@ This project is licensed under the MIT License.
 
 ## Video
 
+Challenge Video Link:
 
+https://drive.google.com/file/d/1xYOd_EMtdDe1QtNXawBB9d-dv01xCa0V/view?usp=drive_link
 
 ## Questions 
 
